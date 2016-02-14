@@ -1,0 +1,64 @@
+//Write a C++ program to sort an array elements
+//Write a C++ program to find largest element of an array.
+
+#include<iostream>
+#define MAX 5
+using namespace std;
+
+class a
+{
+	int s[MAX];
+	public:
+			a(void)
+			{
+				int i;
+				cout<<"Enter the values"<<endl;
+				
+				for(i=0;i<MAX;i++)
+				{
+					cin>>s[i];
+				}
+			}
+			
+			void sort(void);
+			void display(void);
+};
+
+void a::sort(void)
+{
+	int j,k,temp;
+	
+	for(j=0;j<MAX;j++)
+	{
+		for(k=j;k<MAX;k++)
+		{
+			if(s[j]>s[k])
+			{
+				temp=s[j];
+				s[j]=s[k];
+				s[k]=temp;
+			
+			}
+			
+		}
+		
+	}
+	cout<<"Max number is"<<temp<<endl;	
+}
+
+void a::display(void)
+{
+	int l;
+	cout<<"sorted list is :"<<endl;
+	for(l=0;l<MAX;l++)
+	{
+		cout<<s[l]<<endl;
+	}
+}
+
+main()
+{
+	a obj;
+	obj.sort();
+	obj.display();
+}
